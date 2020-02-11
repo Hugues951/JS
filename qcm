@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function qcm(){
+			var all = "2 bonnes reponses";
+			var bof = "1 bonne reponse";
+			var naze = "0 bonnes reponses";
+			if (document.form1.q1.value == "Paris" && document.form1.q2.value == "Pain") {
+				document.form1.resultat.value = all;
+			}
+			else if ((document.form1.q1.value == "Paris" && document.form1.q2.value != "Pain") || (document.form1.q1.value != "Paris" && document.form1.q2.value == "Pain")) {
+				document.form1.resultat.value = bof;
+			}
+			else if (document.form1.q1.value != "Paris" && document.form1.q2.value != "Pain") {
+				document.form1.resultat.value = naze;
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<form name="form1">
+		<p>Quelle est la capitale de la France ?</p>
+		<div>
+		<input type="radio" name="q1" value="Lyon" id="Lyon"/>
+		<label for="Lyon">Lyon</label>
+		</div>
+		<div>
+		<input type="radio" name="q1" value="Paris" id="Paris"/>
+		<label for="Paris">Paris</label>
+		</div>
+		<div>
+		<input type="radio" name="q1" value="Marseille" id="Marseille"/>
+		<label for="Marseille">Marseille</label>			
+		</div>
+		
+		<p>Quel element de la liste suivante n'est PAS une boisson :</p>	
+		<div>
+			<input type="radio" name="q2" value="Eau" id="Eau"/>
+			<label for="Eau">Eau</label>
+		</div>
+		<div>
+			<input type="radio" name="q2" value="Cafe" id="Cafe"/>
+			<label for="Cafe">Cafe</label>
+		</div>	
+		<div>
+			<input type="radio" name="q2" value="Pain" id="Pain"/>
+			<label for="Pain">Pain</label>
+		</div>
+		<div>
+			<input type="button" name="envoyer" value="Check" onclick="qcm()">
+		</div>
+		<div>
+			<input type="text" name="resultat" id="resultat"/>
+		</div>
+
+	</form>
+</body>
+</html>
